@@ -161,3 +161,6 @@ C:\Users\mille\OneDrive\Área de Trabalho\GuardaVolume\GuardaVolume\obj\Debug\ne
 C:\Users\mille\OneDrive\Área de Trabalho\GuardaVolume\GuardaVolume\obj\Debug\netcoreapp3.1\Razor\Views\Armarios\Details.cshtml.g.cs
 C:\Users\mille\OneDrive\Área de Trabalho\GuardaVolume\GuardaVolume\obj\Debug\netcoreapp3.1\Razor\Views\Armarios\Edit.cshtml.g.cs
 C:\Users\mille\OneDrive\Área de Trabalho\GuardaVolume\GuardaVolume\obj\Debug\netcoreapp3.1\Razor\Views\Armarios\Index.cshtml.g.cs
+C:\Users\mille\OneDrive\Área de Trabalho\GuardaVolume\GuardaVolume\obj\Debug\netcoreapp3.1\Razor\Views\Armarios\ArmarioIndex.cshtml.g.cs
+C:\Users\mille\OneDrive\Área de Trabalho\GuardaVolume\GuardaVolume\obj\Debug\netcoreapp3.1\Razor\Views\Armarios\ReservarCompartimento.cshtml.g.cs
+C:\Users\mille\OneDrive\Área de Trabalho\GuardaVolume\GuardaVolume\obj\Debug\netcoreapp3.1\Razor\Views\Armarios\DisponivelCompartimento.cshtml.g.cs

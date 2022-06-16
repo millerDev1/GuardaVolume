@@ -32,9 +32,9 @@
                     <input class="form-check-input" asp-for="Trancado" /> @Html.DisplayNameFor(model => model.Trancado)
                 </label>
             </div>*@
-            @*<div class="form-group">
+@*<div class="form-group">
                 <label asp-for="UsuarioId" class="control-label"></label>
-                <input asp-for="UsuarioId" class="form-control" />
+                <input asp-for="UsuarioId" disabled class="form-control" />
                 <span asp-validation-for="UsuarioId" class="text-danger"></span>
             </div>*@
            @*  <div class="form-group">
@@ -42,13 +42,12 @@
                 <select asp-for="ArmarioId" class ="form-control" asp-items="ViewBag.ArmarioId"></select>
             </div> *@
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Criar" class="btn btn-success" />
+                 <input style="background-color: red" type="submit" asp-controller="Usuarios" asp-action="Create" value="Voltar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 

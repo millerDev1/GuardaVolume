@@ -59,7 +59,7 @@ namespace GuardaVolume.Controllers
             {
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("ArmarioIndex","Armarios");
             }
             return View(usuario);
         }

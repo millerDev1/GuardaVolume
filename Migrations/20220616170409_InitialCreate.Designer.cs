@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GuardaVolume.Migrations
 {
     [DbContext(typeof(GuardaVolumeContext))]
-    [Migration("20220615174756_InitialCreate")]
+    [Migration("20220616170409_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

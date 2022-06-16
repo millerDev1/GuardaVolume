@@ -4,11 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 style="color: red">Compartimentos</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -24,12 +22,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Trancado)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.UsuarioId)
-            </th>
-            <th>
+            </th>*@
+            @*<th>
                 @Html.DisplayNameFor(model => model.Armario)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -55,8 +53,9 @@
                 @Html.DisplayFor(modelItem => item.Armario.ArmarioId)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CompartimentoId">Alugar Compartimento</a> |
-               </td>
+                <a asp-action="ArmarioIndex" asp-route-id="@item.ArmarioId">Reservar um novo Compartimento</a> |
+               
+            </td>
         </tr>
 }
     </tbody>

@@ -4,10 +4,10 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 style="color: red">Armario</h1>
 
-<h4>Armario</h4>
-<hr />
+
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -28,13 +28,12 @@
                 <span asp-validation-for="PontoX" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Criar" class="btn btn-success" />
+                <input style="background-color: red" type="submit" value="Voltar" asp-action="Create" asp-controller="Usuarios" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 

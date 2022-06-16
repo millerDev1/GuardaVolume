@@ -16,6 +16,7 @@ namespace GuardaVolume.Models
 
         public string PontoX {get; set;}
         
+
         public virtual ICollection<Compartimento> Compartimentos { get; set; }
 
 

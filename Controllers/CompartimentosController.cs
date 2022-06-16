@@ -157,30 +157,12 @@ namespace GuardaVolume.Controllers
         //disponivelINdex
         public async Task<IActionResult> DisponivelIndex()
         {
-            var guardaVolumeContext = _context.Compartimento.Include(c => c.Usuario);
-            var guardaVolumeContext1 = guardaVolumeContext.Where(c => c.UsuarioId == null);
-            return View(await guardaVolumeContext.TolistAsync());
-
-
-        }
-        //alugarCompartimento
-          public async Task<IActionResult> AlugarCompartimentos(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var compartimento = await _context.Compartimento.FindAsync(id);
-            if (compartimento == null)
-            {
-                return NotFound();
-            }
-            var compartimentosDisponveis= _context.Compartimento.Where(u => u.Disponivel==true);
-            ViewData["ArmarioId"] = new SelectList(_context.Armario, "ArmarioId", "Regiao", compartimento.ArmarioId);
-            return View(compartimento);
+            var guardaVolumeContext = _context.Compartimento.Where(c => c.UsuarioId == null);
+            return View(await guardaVolumeContext.ToListAsync());
+        
 
         }
+                         
 
         private bool CompartimentoExists(int id)
         {

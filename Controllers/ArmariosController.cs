@@ -23,6 +23,7 @@ namespace GuardaVolume.Controllers
         {
             return View(await _context.Armario.ToListAsync());
         }
+        
 
         // GET: Armarios/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -77,6 +78,7 @@ namespace GuardaVolume.Controllers
             {
                 return NotFound();
             }
+            
             return View(armario);
         }
 
@@ -143,6 +145,70 @@ namespace GuardaVolume.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+     public async Task<IActionResult> ArmarioIndex()
+        {
+            return View(await _context.Armario.ToListAsync());
+        }
+         
+        public async Task<IActionResult> DisponivelCompartimento()
+        {
+            return View(await _context.Compartimento.ToListAsync());
+        }
+         public async Task<IActionResult> ReservarCompartimento(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var compartimento = await _context.Compartimento.FindAsync(id);
+            if (compartimento == null)
+            {
+                return NotFound();
+            }
+            //var compartimentosDisponveis= _context.Compartimento.Where(c => c.Disponivel==true);
+            ViewData["ArmarioId"] = new SelectList(_context.Armario, "ArmarioId", "Regiao", compartimento.ArmarioId);
+
+
+        return View(compartimento);
+
+            
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ReservarCompartimento(int id, [Bind("ArmarioId,Regiao,PontoY,PontoX")] Armario armario)
+        {
+            if (id != armario.ArmarioId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(armario);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ArmarioExists(armario.ArmarioId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(armario);
+        }
+
+    
+            
 
         private bool ArmarioExists(int id)
         {
